@@ -13,7 +13,11 @@ import CadastrarProfessor from "./screens/CadastrarProfessor";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
+<<<<<<< HEAD
 //teste iza 2
+=======
+//teste iza
+>>>>>>> dcb2acba91c451d804e775bd76def4ce4136f1c6
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
