@@ -9,7 +9,7 @@ const CadAluno = () => {
   return (
     <View style={styles.cadaluno}>
       <SafeAreaView style={styles.banner}>
-        <Text style={styles.subtitle}>Cadastrar Aluno</Text>
+        <Text style={styles.titulo}>Cadastrar Aluno</Text>
         <Image
            source={require('../assets/alunoImg.png')}
           style={styles.image}
@@ -50,8 +50,8 @@ const CadAluno = () => {
         </View>
       </SafeAreaView>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Continuar</Text>
+      <TouchableOpacity style={styles.btnCon}>
+        <Text style={styles.txtCon}>Continuar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -68,13 +68,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    width: 250,
-    height: 250,
+    marginTop:40,
+    width:300,
+    height: 300,
   },
-  subtitle: {
-    marginTop:20,
+  titulo: {
+    marginTop:30,
     fontSize: 30,
-    color: '#000',
+    color: '#FFA404',
     marginBottom: 20,
     textAlign: 'center',
     fontWeight: 'bold',
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     marginBottom: 20,
     fontSize: 16,
-    borderColor: '#000',
+    borderColor: '#40A2E3',
     borderWidth: 1,
   },
   pickerContainer: {
@@ -99,14 +100,14 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     justifyContent: 'center',
     marginBottom: 20,
-    borderColor: '#000',
+    borderColor: '#40A2E3',
     borderWidth: 1,
   },
   picker: {
     height: 50,
     color: '#000',
   },
-  button: {
+  btnCon: {
     height: 50,
     backgroundColor: '#40A2E3',
     borderRadius: 25,
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom:20
   },
-  buttonText: {
+  txtCon: {
     color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold',
