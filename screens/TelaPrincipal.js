@@ -1,164 +1,115 @@
-import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { Image } from "expo-image";
-import BtnCad from "../components/BtnCad";
-import BtnAtu from "../components/BtnAtu";
-import BtnVer from "../components/BtnVer";
+import React, { useEffect } from "react";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import * as Font from 'expo-font';
 import { Color, FontSize, FontFamily } from "../GlobalStyles";
+import { useNavigation } from '@react-navigation/native';
 
 const TelaPrincipal = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    const loadFont = async () => {
+      await Font.loadAsync({
+        'Baloo': require('../Fonts/Baloo.ttf'),
+      });
+    };
+    loadFont();
+  }, []);
+
   return (
     <View style={styles.telaprincipal}>
-      <View style={[styles.banner, styles.bannerPosition]}>
-        <View style={[styles.blocoamarelo, styles.biometricPosition]} />
-        <Text style={[styles.titulo, styles.bannerPosition]}>CALL</Text>
-        <View style={[styles.blocoazulcima, styles.blocoazulcimaPosition]} />
-        <View style={styles.blocoazulmeio} />
+      <View style={styles.banner}>
         <Image
-          style={[styles.logotipo2Icon, styles.bannerPosition]}
+          style={styles.logo}
           contentFit="cover"
           source={require("../assets/logotipo.png")}
         />
-        <Text style={[styles.biometric, styles.biometricPosition]}>
-          BIOMETRIC
-        </Text>
+        <Text style={styles.titulo}>BIOMETRIC CALL</Text>
       </View>
-      <View style={[styles.rodape, styles.rodapePosition]}>
-        <View style={[styles.blocoamarelorodape, styles.rodapePosition]} />
-        <View style={[styles.blocoazulbaixo, styles.blocoazulcimaPosition]} />
+      <View style={styles.divBtns}>
+        <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('CadAluno')}>
+          <Image
+            source={require('../assets/cadImg.png')}
+            style={styles.image}
+          />
+          <Text style={styles.txtButton}>Cadastrar Aluno</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('AtualizarAluno')}>
+          <Image
+            source={require('../assets/upImg.png')}
+            style={styles.image}
+          />
+          <Text style={styles.txtButton}>Atualizar Aluno</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('VerificarAluno')}>
+          <Image
+            source={require('../assets/verImg.png')}
+            style={styles.image}
+          />
+          <Text style={styles.txtButton}>Verificar Chamada</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('ApagarAluno')}>
+          <Image
+            source={require('../assets/delImg.png')}
+            style={styles.image}
+          />
+          <Text style={styles.txtButton}>Apagar Aluno</Text>
+        </TouchableOpacity>
       </View>
-      <BtnCad
-        cADASTRAR="CADASTRAR"
-        logotipo2={require("../assets/logotipo.png")}
-      />
-      <BtnVer
-        vERIFICAR="VERIFICAR"
-        cHAMADA="CHAMADA"
-        logotipo3={require("../assets/logotipo.png")}
-      />
-      <BtnAtu
-        cADASTRAR="ATUALIZAR"
-        logotipo2={require("../assets/logotipo.png")}
-        propMarginTop={66}
-        propMarginLeft={-144}
-        propLeft={35}
-      />
-      <BtnVer
-        vERIFICAR="APAGAR"
-        cHAMADA="ALUNO"
-        logotipo3={require("../assets/logotipo.png")}
-        propMarginTop={66}
-        propMarginLeft={20}
-        propWidth={60}
-        propHeight={59}
-      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  bannerPosition: {
-    left: "50%",
-    top: "50%",
-    position: "absolute",
+  telaprincipal: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: "center",
   },
-  biometricPosition: {
-    width: 360,
-    left: "50%",
-    top: "50%",
-    position: "absolute",
+  image: {
+    width: 30,
+    height: 30,
+    marginRight: 20,
   },
-  blocoazulcimaPosition: {
-    height: 20,
+  btns: {
     backgroundColor: Color.colorDeepskyblue,
-    width: 360,
-    left: "50%",
-    top: "50%",
-    position: "absolute",
+    borderRadius: 10,
+    width: '110%',
+    height: 60,
+    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 30
   },
-  rodapePosition: {
-    width: 367,
-    left: "50%",
-    top: "50%",
-    position: "absolute",
-  },
-  blocoamarelo: {
-    height: 141,
-    backgroundColor: Color.colorOrange,
-    marginLeft: -184,
-    marginTop: -77,
-  },
-  titulo: {
-    marginTop: 3,
-    marginLeft: -82,
-    fontSize: FontSize.size_5xl,
-    letterSpacing: 7.9,
-    fontWeight: "700",
-    fontFamily: FontFamily.interBold,
-    color: Color.colorSaddlebrown,
-    textAlign: "left",
-    width: 235,
-    height: 50,
-  },
-  blocoazulcima: {
-    marginLeft: -184,
-    marginTop: -77,
-  },
-  blocoazulmeio: {
-    marginTop: 53,
-    height: 24,
-    backgroundColor: Color.colorDeepskyblue,
-    width: 360,
-    marginLeft: -184,
-    left: "50%",
-    top: "50%",
-    position: "absolute",
-  },
-  logotipo2Icon: {
-    marginTop: -43,
-    marginLeft: -194,
-    width: 133,
-    height: 115,
-  },
-  biometric: {
-    marginTop: -49,
-    marginLeft: -166,
-    fontSize: FontSize.size_21xl,
-    fontFamily: FontFamily.baloo,
-    color: Color.colorOldlace,
-    textAlign: "center",
-    height: 63,
+  txtButton: {
+    color: "white",
+    fontSize: 20,
   },
   banner: {
-    marginTop: -400,
-    marginLeft: -190,
-    width: 388,
-    height: 154,
+    alignItems: "center",
+    marginTop: 30,
+    flexDirection: "row",
   },
-  blocoamarelorodape: {
-    marginTop: -22.5,
-    marginLeft: -183.5,
-    height: 65,
-    backgroundColor: Color.colorOrange,
+  logo: {
+    width: 60,
+    height: 60,
+    marginTop: 10,
+    marginRight: 10
   },
-  blocoazulbaixo: {
-    marginTop: -42.5,
-    marginLeft: -181.5,
+  titulo: {
+    
+    fontSize: 30,
+    color: "#FFA404",
+    fontFamily: 'Baloo',
+    fontWeight:'bold'
   },
-  rodape: {
-    marginTop: 319,
-    marginLeft: -180,
-    height: 85,
-  },
-  telaprincipal: {
-    backgroundColor: Color.colorLightblue,
-    borderStyle: "solid",
-    borderColor: Color.colorOldlace,
-    borderWidth: 1,
-    flex: 1,
-    width: "100%",
-    height: 800,
-    overflow: "hidden",
+  divBtns: {
+    width: '80%',
+    alignItems: 'center',
+    marginTop: 150
   },
 });
 
