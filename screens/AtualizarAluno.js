@@ -11,7 +11,7 @@ const CadAluno = () => {
       <SafeAreaView style={styles.banner}>
         <Text style={styles.titulo}>Atualizar Aluno</Text>
         <Image
-           source={require('../assets/atualizarImg.png')}
+           source={require('../assets/imgs/atualizarImg.png')}
           style={styles.image}
         />
       </SafeAreaView>

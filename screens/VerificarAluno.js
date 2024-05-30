@@ -13,7 +13,7 @@ const VerificarAluno = () => {
         <Image
           style={styles.logotipo3Icon}
           contentFit="cover"
-          source={require("../assets/logotipo.png")}
+          source={require("../assets/imgs/logotipo.png")}
         />
       </View>
       <View style={[styles.banner, styles.bannerPosition]}>
@@ -24,7 +24,7 @@ const VerificarAluno = () => {
         <Image
           style={[styles.logotipo2Icon, styles.bannerPosition]}
           contentFit="cover"
-          source={require("../assets/logotipo.png")}
+          source={require("../assets/imgs/logotipo.png")}
         />
         <Text style={styles.biometric}>BIOMETRIC</Text>
       </View>

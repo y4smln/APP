@@ -10,7 +10,7 @@ const TelaPrincipal = () => {
   useEffect(() => {
     const loadFont = async () => {
       await Font.loadAsync({
-        'Baloo': require('../Fonts/Baloo.ttf'),
+        'Baloo': require('../assets/Fonts/Baloo.ttf'),
       });
     };
     loadFont();
@@ -22,14 +22,14 @@ const TelaPrincipal = () => {
         <Image
           style={styles.logo}
           contentFit="cover"
-          source={require("../assets/logotipo.png")}
+          source={require("../assets/imgs/logotipo.png")}
         />
         <Text style={styles.titulo}>BIOMETRIC CALL</Text>
       </View>
       <View style={styles.divBtns}>
         <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('CadAluno')}>
           <Image
-            source={require('../assets/cadImg.png')}
+            source={require('../assets/imgs/cadImg.png')}
             style={styles.image}
           />
           <Text style={styles.txtButton}>Cadastrar Aluno</Text>
@@ -37,7 +37,7 @@ const TelaPrincipal = () => {
 
         <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('AtualizarAluno')}>
           <Image
-            source={require('../assets/upImg.png')}
+            source={require('../assets/imgs/upImg.png')}
             style={styles.image}
           />
           <Text style={styles.txtButton}>Atualizar Aluno</Text>
@@ -45,7 +45,7 @@ const TelaPrincipal = () => {
         
         <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('VerificarAluno')}>
           <Image
-            source={require('../assets/verImg.png')}
+            source={require('../assets/imgs/verImg.png')}
             style={styles.image}
           />
           <Text style={styles.txtButton}>Verificar Chamada</Text>
@@ -53,7 +53,7 @@ const TelaPrincipal = () => {
 
         <TouchableOpacity style={styles.btns} onPress={() => navigation.navigate('ApagarAluno')}>
           <Image
-            source={require('../assets/delImg.png')}
+            source={require('../assets/imgs/delImg.png')}
             style={styles.image}
           />
           <Text style={styles.txtButton}>Apagar Aluno</Text>

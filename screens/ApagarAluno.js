@@ -11,7 +11,7 @@ const ApagarAluno = () => {
       <SafeAreaView style={styles.banner}>
         <Text style={styles.titulo}>Apagar Aluno</Text>
         <Image
-           source={require('../assets/apagarImg.png')}
+           source={require('../assets/imgs/apagarImg.png')}
           style={styles.image}
         />
       </SafeAreaView>

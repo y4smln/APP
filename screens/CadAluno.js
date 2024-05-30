@@ -11,7 +11,7 @@ const CadAluno = () => {
       <SafeAreaView style={styles.banner}>
         <Text style={styles.titulo}>Cadastrar Aluno</Text>
         <Image
-           source={require('../assets/alunoImg.png')}
+           source={require('../assets/imgs/alunoImg.png')}
           style={styles.image}
         />
       </SafeAreaView>
