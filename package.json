@@ -7,12 +7,20 @@
     "web": "expo start --web"
   },
   "dependencies": {
+<<<<<<< HEAD
     "expo": "~51.0.10",
+=======
+    "expo": "~51.0.9",
+>>>>>>> 7867ee9046ae0c3c4967b1026e2c425cbd4becb9
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.1",
     "expo-font": "~12.0.6",
+<<<<<<< HEAD
     "expo-image": "~1.12.10",
+=======
+    "expo-image": "~1.12.9",
+>>>>>>> 7867ee9046ae0c3c4967b1026e2c425cbd4becb9
     "@expo/vector-icons": "^14.0.0",
     "react-native-paper": "4.9.2",
     "@expo/metro-runtime": "~3.2.1",

@@ -26,7 +26,11 @@ const VerificarAluno = () => {
           contentFit="cover"
           source={require("../assets/imgs/logotipo.png")}
         />
+<<<<<<< HEAD
         <Text style={styles.biometric}>BIcall</Text>
+=======
+        <Text style={styles.biometric}>BIOMETRIC</Text>
+>>>>>>> 7867ee9046ae0c3c4967b1026e2c425cbd4becb9
       </View>
       <Text style={[styles.txtcad, styles.tituloTypo]}>VERIFICAR ALUNO</Text>
       <View style={styles.table}>
